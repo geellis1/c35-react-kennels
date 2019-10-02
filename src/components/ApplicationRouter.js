@@ -17,6 +17,7 @@ import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './Auth/Login'
+import AnimalEditForm from './animal/AnimalEditForm'
 
 class ApplicationRouter extends Component {
   isAuthenticated = () => localStorage.getItem("credentials") !== null
@@ -36,13 +37,18 @@ class ApplicationRouter extends Component {
             return <Redirect to="/login" />
           }
         }} />
-        <Route path="/animals/:animalId(\d+)" render={(props) => {
+        <Route exact path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props} />
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
         }} />
+        <Route
+          path="/animals/:animalId(\d+)/edit" render={props => {
+            return <AnimalEditForm {...props} />
+          }}
+        />
         <Route exact path="/employees" render={(props) => {
           if (this.isAuthenticated()) {
             return <EmployeeList {...props} />
