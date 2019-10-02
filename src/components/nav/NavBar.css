@@ -1,0 +1,49 @@
+picture {
+  display: flex;
+  justify-content: center;
+  max-width: auto;
+  margin-top: 20px;
+}
+
+small {
+    font-size: 75%;
+  }
+
+  header {
+    background-color: #B6D994;
+    border: cornflowerblue solid 3px;
+  }
+
+  .site-title {
+    color: ghostwhite;
+    text-align: center;
+  }
+
+  nav .container {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  nav .container li {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: cornsilk;
+    box-sizing: border-box;
+    background-color:#11897D;
+    list-style-type: none;
+    margin-top: 20px;
+  }
+
+  nav .container a {
+    color: cornsilk;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  nav .container a:hover {
+    color: #F58E81;
+  }

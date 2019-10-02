@@ -1,0 +1,80 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Nellie",
+      "breed": "Goldendoodle"
+    },
+    {
+      "name": "Ruthie",
+      "breed": "Poodle",
+      "id": 2
+    },
+    {
+      "name": "nellie",
+      "breed": "poodle",
+      "id": 3
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Brenda",
+      "title": "Receptionist"
+    },
+    {
+      "id": 2,
+      "name": "Chandler",
+      "title": "Vet Tech"
+    },
+    {
+      "id": 3,
+      "name": "Quin",
+      "title": "Veterinarian"
+    },
+    {
+      "name": "Gradi Ellis",
+      "title": "Test",
+      "id": 4
+    }
+  ],
+  "locations": [
+    {
+      "id": 2,
+      "name": "West Nashville",
+      "address": "2204 Charlotte Pike"
+    },
+    {
+      "name": "east nashville",
+      "address": "2204 FERNWOOD DR",
+      "id": 3
+    },
+    {
+      "name": "ds",
+      "address": "fds",
+      "id": 4
+    },
+    {
+      "name": "fds",
+      "address": "d",
+      "id": 5
+    }
+  ],
+  "owners": [
+    {
+      "id": 2,
+      "name": "Brooke",
+      "dogName": "Nellie"
+    },
+    {
+      "id": 3,
+      "name": "Kaitlin",
+      "dogName": "Charlie"
+    },
+    {
+      "name": "Gradi Ellis",
+      "dogName": "fdsa",
+      "id": 4
+    }
+  ]
+}
