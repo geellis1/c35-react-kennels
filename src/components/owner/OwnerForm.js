@@ -28,7 +28,7 @@ class OwnerForm extends Component {
                 dogName: this.state.dogName,
             };
 
-            // Create the animal and redirect user to animal list
+            // Create the owner and redirect user to owner list
             OwnersManager.post(owner)
             .then(() => this.props.history.push("/owners"));
         }

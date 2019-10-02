@@ -2,13 +2,13 @@
   "animals": [
     {
       "id": 1,
-      "name": "chadnler",
-      "breed": "Goldendoodle"
+      "name": "Chandler",
+      "breed": "Bernedoodle"
     },
     {
+      "id": 2,
       "name": "Ruthie",
-      "breed": "Poodle",
-      "id": 2
+      "breed": "Poodle"
     },
     {
       "name": "nellie",
@@ -36,6 +36,11 @@
       "name": "Gradi Ellis",
       "title": "Test",
       "id": 4
+    },
+    {
+      "name": "fds",
+      "title": "fdsa",
+      "id": 5
     }
   ],
   "locations": [

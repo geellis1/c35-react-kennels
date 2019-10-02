@@ -1,7 +1,10 @@
-//When viewing the Animals section, AnimalCard.js will load up and invoke render().
+/*When viewing the Animals section, AnimalCard.js will load up and invoke render().
+The AnimalCard component is basically creating a card component for each individual
+animal on the animals list*/
 
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+//if using a link you have to import this to make the link work //
 
 
 class AnimalCard extends Component {
