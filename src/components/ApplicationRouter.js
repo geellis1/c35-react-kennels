@@ -82,11 +82,7 @@ class ApplicationRouter extends Component {
           return <OwnerForm {...props} />
         }} />
         <Route exact path="/locations" render={(props) => {
-          if (this.props.user) {
             return <LocationList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props} />
@@ -94,6 +90,7 @@ class ApplicationRouter extends Component {
         <Route path="/locations/new" render={(props) => {
           return <LocationForm {...props} />
         }} />
+
         <Route path="/login" render={props => {
           return <Login setUser={this.props.setUser} {...props} />
         }} />
