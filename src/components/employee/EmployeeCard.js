@@ -12,7 +12,7 @@ class EmployeeCard extends Component {
           <h3>Name: <span className="card-employeename">{this.props.employee.name}</span></h3>
           <p>Title: {this.props.employee.title}</p>
           <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Fire Employee</button>
-          <Link to={`/employees/${this.props.employee.id}`}><button>Details</button></Link>
+          <Link to={`/employees/${this.props.employee.id}/details`}><button>Details</button></Link>
         </div>
       </div>
     );

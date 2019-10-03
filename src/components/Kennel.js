@@ -16,15 +16,43 @@ accepts inputs i.e. properties(props) and returns a React element that describes
 UI (User Interface) should appear. A class component can have some additional features such as the
 ability to contain logic (for example methods that handle onClick events) */
 class Kennel extends Component {
-    render() {
-        return (
-                    <>
-                      <NavBar />
-                      <ApplicationRouter />
-                    </>
-                  )
-                }
-              }
+  state = {
+    user: false
+  }
 
+  // Check if credentials are in local storage
+  //returns true/false
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
+
+  setUser = (authObj) => {
+    /*
+      For now, just store the email and password that
+      the customer enters into local storage.
+    */
+    sessionStorage.setItem(
+      "credentials",
+      JSON.stringify(authObj)
+    )
+    this.setState({
+      user: this.isAuthenticated()
+    });
+  }
+
+  componentDidMount(){
+    this.setState({
+      user: this.isAuthenticated()
+    })
+  }
+
+render() {
+  return (
+    <>
+      <NavBar user={this.state.user} />
+      <ApplicationRouter user={this.state.user}
+                        setUser={this.setUser} />
+    </>
+  )
+}
+}
 
 export default Kennel

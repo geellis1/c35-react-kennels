@@ -18,6 +18,8 @@ import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './Auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
+import EmployeesWithAnimals from './employee/EmployeesWithAnimals'
+
 
 /*React.Fragment allows you to pass around multiple elements without having to add any extra markup
 When rendered to the DOM, its children will be rendered by themselves, making it possible to pass
@@ -26,9 +28,6 @@ with table and list markup (like the above), where it’s just not possible to a
 basically a <div> element.*/
 
 class ApplicationRouter extends Component {
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
-  // Check if credentials are in local storage
-  //returns true/false
   render() {
     return (
       <React.Fragment>
@@ -38,7 +37,7 @@ class ApplicationRouter extends Component {
         {/* Make sure you add the `exact` attribute here. Exact path allows you to basically separate
         each component from the users view. Or basically switches the "page" */}
         <Route exact path="/animals" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -57,20 +56,20 @@ class ApplicationRouter extends Component {
           }}
         />
         <Route exact path="/employees" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <EmployeeList {...props} />
           } else {
             return <Redirect to="/login" />
           }
         }} />
-        <Route path="/employees/:employeeId(\d+)" render={(props) => {
-          return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} {...props}/>
-        }} />
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
+        <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+          return <EmployeesWithAnimals {...props} />
+        }} />
         <Route exact path="/owners" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <OwnerList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -83,7 +82,7 @@ class ApplicationRouter extends Component {
           return <OwnerForm {...props} />
         }} />
         <Route exact path="/locations" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <LocationList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -95,7 +94,9 @@ class ApplicationRouter extends Component {
         <Route path="/locations/new" render={(props) => {
           return <LocationForm {...props} />
         }} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={props => {
+          return <Login setUser={this.props.setUser} {...props} />
+        }} />
 
       </React.Fragment>
     )

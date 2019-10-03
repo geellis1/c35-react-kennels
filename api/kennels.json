@@ -2,17 +2,18 @@
   "animals": [
     {
       "id": 1,
-      "name": "Chandler",
-      "breed": "Bernedoodle"
+      "name": "gdklfgjsldkfjg",
+      "breed": "jglksdfjgsdfg",
+      "employeeId": 2
     },
     {
-      "id": 2,
-      "name": "Ruthie",
-      "breed": "Poodle"
+      "name": "sdfgsjdfkgljsdfg",
+      "breed": "sdfgjsdlfgjskldjfg",
+      "id": 2
     },
     {
-      "name": "nellie",
-      "breed": "poodle",
+      "name": "dfgjkdlfjg",
+      "breed": "sdfjgkldsfjg",
       "id": 3
     }
   ],
@@ -26,11 +27,6 @@
       "id": 2,
       "name": "Chandler",
       "title": "Vet Tech"
-    },
-    {
-      "id": 3,
-      "name": "Quin",
-      "title": "Veterinarian"
     },
     {
       "name": "Gradi Ellis",
