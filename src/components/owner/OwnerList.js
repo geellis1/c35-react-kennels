@@ -47,8 +47,12 @@ a render happens and then it will also render again. */
   </button>
 </section>
             <div className="container-cards">
-                {this.state.owners.map(owner => <OwnerCard owner={owner} key={owner.id}
-                  deleteOwner={this.deleteOwner}/>)}
+                {this.state.owners.map(owner => <OwnerCard 
+                owner={owner} 
+                key={owner.id}
+                deleteOwner={this.deleteOwner}
+                {...this.props}
+                />)}
             </div>
             </>
         )

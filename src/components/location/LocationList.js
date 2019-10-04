@@ -39,6 +39,7 @@ a render happens and then it will also render again. */
 
         return(
             <>
+            {(this.props.user) ?
             <section className="section-content">
   <button type="button"
       className="btn"
@@ -46,8 +47,10 @@ a render happens and then it will also render again. */
      Add New Location
   </button>
 </section>
+: ""
+            }
             <div className="container-cards">
-                {this.state.locations.map(location => <LocationCard deleteLocation={this.deleteLocation} location={location} key={location.id} />)}
+                {this.state.locations.map(location => <LocationCard deleteLocation={this.deleteLocation} locale={location} key={location.id} user={this.props.user}/>)}
             </div>
             </>
         )

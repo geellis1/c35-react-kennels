@@ -13,6 +13,8 @@ class OwnerCard extends Component {
             <p>Dog Name: {this.props.owner.dogName}</p>
             <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>I've Adopted!</button>
             <Link to={`/owners/${this.props.owner.id}`}><button>Details</button></Link>
+            <button type="button"
+        onClick={() => {this.props.history.push(`/owners/${this.props.owner.id}/edit`)}}>Edit</button>
           </div>
         </div>
       );

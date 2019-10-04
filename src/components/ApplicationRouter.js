@@ -19,6 +19,8 @@ import OwnerForm from './owner/OwnerForm'
 import Login from './Auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
 import EmployeesWithAnimals from './employee/EmployeesWithAnimals'
+import EmployeeEditForm from './employee/EmployeeEditForm'
+import OwnerEditForm from './owner/OwnerEditForm'
 
 
 /*React.Fragment allows you to pass around multiple elements without having to add any extra markup
@@ -50,8 +52,7 @@ class ApplicationRouter extends Component {
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
         }} />
-        <Route
-          path="/animals/:animalId(\d+)/edit" render={props => {
+        <Route path="/animals/:animalId(\d+)/edit" render={props => {
             return <AnimalEditForm {...props} />
           }}
         />
@@ -62,12 +63,20 @@ class ApplicationRouter extends Component {
             return <Redirect to="/login" />
           }
         }} />
+        <Route exact path="/employees/:employeeId(\d+)" render={(props) => {
+          // Pass the animalId to the AnimalDetailComponent
+          return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} {...props} />
+        }} />
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
         <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
           return <EmployeesWithAnimals {...props} />
         }} />
+        <Route path="/employees/:employeeId(\d+)/edit" render={props => {
+            return <EmployeeEditForm {...props} />
+          }}
+        />
         <Route exact path="/owners" render={(props) => {
           if (this.props.user) {
             return <OwnerList {...props} />
@@ -75,14 +84,19 @@ class ApplicationRouter extends Component {
             return <Redirect to="/login" />
           }
         }} />
-        <Route path="/owners/:ownerId(\d+)" render={(props) => {
-          return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} {...props} />
+        <Route exact path="/owners/:ownerId(\d+)" render={(props) => {
+          // Pass the animalId to the AnimalDetailComponent
+          return <OwnerDetail employeeId={parseInt(props.match.params.ownerId)} {...props} />
         }} />
         <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props} />
         }} />
+        <Route path="/owners/:ownerId(\d+)/edit" render={props => {
+            return <OwnerEditForm {...props} />
+          }}
+        />
         <Route exact path="/locations" render={(props) => {
-            return <LocationList {...props} />
+            return <LocationList {...props} user={this.props.user} />
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props} />

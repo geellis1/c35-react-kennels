@@ -50,7 +50,9 @@ a render happens and then it will also render again. */
                 {this.state.employees.map(employee => <EmployeeCard
                 employee={employee}
                 key={employee.id}
-                deleteEmployee={this.deleteEmployee}/>)}
+                deleteEmployee={this.deleteEmployee}
+                {...this.props}
+                />)}
             </div>
             </>
         )

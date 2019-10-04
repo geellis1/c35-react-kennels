@@ -21,17 +21,17 @@
     {
       "id": 1,
       "name": "Brenda",
-      "title": "Receptionist"
+      "breed": "Receptionist 48"
     },
     {
       "id": 2,
-      "name": "Chandler",
-      "title": "Vet Tech"
+      "name": "gradi",
+      "title": "test"
     },
     {
+      "id": 4,
       "name": "Gradi Ellis",
-      "title": "Test",
-      "id": 4
+      "breed": "Test 88"
     },
     {
       "name": "fds",
@@ -44,11 +44,6 @@
       "id": 2,
       "name": "West Nashville",
       "address": "2204 Charlotte Pike"
-    },
-    {
-      "name": "east nashville",
-      "address": "2204 FERNWOOD DR",
-      "id": 3
     },
     {
       "name": "ds",
@@ -70,7 +65,7 @@
     {
       "id": 3,
       "name": "Kaitlin",
-      "dogName": "Charlie"
+      "dogName": "charlie boy"
     },
     {
       "name": "Gradi Ellis",
